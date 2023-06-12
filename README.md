@@ -18,3 +18,5 @@ Finally, search for a generation of circuits (which have 20 circuits in this cas
 `search_no_proxy.py` search for circuits, which directly measure its circuits on real evaluator but not proxy models.
 
 `search_rf.py` search for circuits, which measure its circuits on the fitted random forest model.
+
+`circuit_codec.py` contains the translator from discrete code to circuit, from continuous code to discrete code and from continuous code to circuit.
