@@ -19,7 +19,7 @@ class Evaluator():
         ham_of = mol.get_molecular_hamiltonian()
         inter_ops = InteractionOperator(*ham_of.n_body_tensors.values())
         ham_hiq = FermionOperator(inter_ops)
-        qubit_ham = Transform(ham_hiq).jordan_wigner()
+        qubit_ham = Transform(ham_hiq).bravyi_kitaev()
         self.hamiltonian = Hamiltonian(qubit_ham.compress())
 
     def evaluate(self, circuit:Circuit, init=None) -> float:
@@ -65,7 +65,7 @@ class Trainer():
         ham_of = mol.get_molecular_hamiltonian()
         inter_ops = InteractionOperator(*ham_of.n_body_tensors.values())
         ham_hiq = FermionOperator(inter_ops)
-        qubit_ham = Transform(ham_hiq).jordan_wigner()
+        qubit_ham = Transform(ham_hiq).bravyi_kitaev()
         self.hamiltonian = Hamiltonian(qubit_ham.compress())
 
     def get_gradient(self, circuit:Circuit, init) -> float:
